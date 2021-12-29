@@ -880,6 +880,27 @@ KY_040 = ["KY_040", "KY-040 rotart encoder breakout",
     ],
     []];
 
+daypower_motor_9110 = [
+    "daypower_motor_9110", "Daypower 9110 H-Brückentreiber (Pollin)",
+    23.3, 29.8, 1.6, // size
+    1, // corner radius
+    2.9, // mounting hole diameter
+    3.5, // pad around mounting hole
+    grey(30), // color
+    false, // true if parts should be separate BOM items
+    [ // hole positions
+        [3.0, 6.3], [23.3-3.0, 6.3], [3.0, 19.5], [23.3-3.0, 19.5]
+    ],
+    [ // components
+        // screw-terminals
+        [  6, 25.8, 90, "gterm", gt_5x11, 2, undef, "green" ],
+        [  17, 25.8, 90, "gterm", gt_5x11, 2, undef, "green" ],
+        // Pinheaders
+        [  23.3/2,  1.5,  0, "2p54header", 6, 1 ],
+    ],
+    [] // accessories
+];
+
 tiny_pcbs = [XIAO, MP1584EN, TP4056, ESP_01, LIPO_fuel_gauge];
 
 pcbs = [RAMPSEndstop, KY_040, MT3608, ZC_A0591, ArduinoNano, RPI_Pico, ESP32_DOIT_V1, RPI0, EnviroPlus, ArduinoUno3, ArduinoLeonardo, WD2002SJ, RPI3, RPI4, BTT_SKR_MINI_E3_V2_0, BTT_SKR_E3_TURBO, BTT_SKR_V1_4_TURBO, DuetE, Duex5];
