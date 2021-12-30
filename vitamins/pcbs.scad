@@ -844,6 +844,26 @@ ESP32_DOIT_V1 = let(l = 51.45, w = 28.33, pitch = inch(1), pins = 15, poffset = 
     [(l - inch(pins - 1) / 10) / 2 + inch(0.05), (w - pitch) / 2, pins, 2, silver, 2.54, pitch], // 15x2 grid of holes
 ];
 
+ESP32_AZ_DELIVERY = let(l = 54.0, w = 28.0, pitch = inch(1), pins = 19, poffset = 0) [
+    "ESP32_AZ_DELIVERY", "ESP32 AZ-Delivery",
+    l, w, 1.6, // Size
+    2, // corner radius
+    2.4, // mounting hole diameter
+    0, // pad around mounting hole
+    grey(20), // color
+    false, // true if parts should be separate BOM items
+    [for(x = [-1, 1], y = [-1, 1]) [x * 51.0 / 2 + l / 2, y * 23.6 / 2 + w / 2]],
+    [ // components
+      [l / 2 + poffset, w / 2 - pitch / 2, 0, "-2p54header", pins, 1],
+      [l / 2 + poffset, w / 2 + pitch / 2, 0, "-2p54header", pins, 1],
+      [1.75, w / 2, 180, "usb_uA" ],
+      [35,  w / 2, 0, "block", 17.7, 16, 3, silver], // can
+      for(y=[-1,1]) [3.5,  y * 6.5, 0, "chip", 4,  3, 1.6, silver],   // Mock button surround
+      for(y=[-1,1]) [3.5,  y * 6.5, 0, "chip", 1.8,0, 2.0, grey(20)], // Mock buttons
+   ],
+    [], // accessories
+];
+
 ArduinoNano = let(l = 43.18, w = 17.78, pitch = inch(0.6), pins = 15, poffset = -0.05, led_spacing = [1.5, 1.8]) [
     "ArduinoNano", "Arduino Nano",
     l, w, 1.6, // Size
